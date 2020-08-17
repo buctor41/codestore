@@ -1,13 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+//DEFINE
 #define fastio ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-int main()
-{
-    fastio;    
-    int a,b;
-    cin >> a >> b;
-    int g = __gcd(a,b);
-
-
-}
+#define CYL cout << "YES" << endl;
+#define CNL cout << "NO" << endl;
+#define ll long long
+//GLOBAL
