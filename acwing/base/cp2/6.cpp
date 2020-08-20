@@ -1,5 +1,5 @@
 //https://www.acwing.com/problem/content/156/
-//优先队列
+//单调队列
 #include <iostream>
 using namespace std;
 const int N = 1e6 + 10;
