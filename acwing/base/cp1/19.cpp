@@ -20,7 +20,7 @@ int main()
         cin >> l >> r;
         segs.push_back({l,r});
     }
-    sort(arr.begin(),arr.end());
+    sort(segs.begin(),segs.end());
     int st = -2e9,ed = -2e9;
     for(auto seg: segs)
     {
