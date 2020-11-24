@@ -14,8 +14,11 @@ typedef pair <int, int> pii;
 #define fastio ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
 
 
-
+int a,b,c;
+int f[3][101];
 signed main()
 {
-    
+    fastio;
+    cin >> a >> b >> c;
+
 }
