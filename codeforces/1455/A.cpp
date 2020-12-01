@@ -29,8 +29,17 @@ inline int read() {
     }
     return x * f;
 }
-
+int t;
 signed main()
 {
-    fastio;   
+    fastio;
+    cin >> t;
+    while(t--){
+        string s;
+        cin >> s;
+        int ans = 1;
+        int n = s.size();
+        ans += (n-1);
+        cout << ans << endl;
+    }
 }

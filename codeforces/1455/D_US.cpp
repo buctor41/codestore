@@ -29,8 +29,18 @@ inline int read() {
     }
     return x * f;
 }
-
+int t,n,x;
+const int N = 550;
+int a[N];
+vector<int> cnt[N];
 signed main()
 {
-    fastio;   
+    fastio;
+    cin >> t;
+    while(t--){
+        cin >> n >> x;
+        for(int i = 0; i < N; i++) cnt[i].clear();
+        
+        
+    }
 }

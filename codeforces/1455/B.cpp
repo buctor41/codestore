@@ -29,8 +29,28 @@ inline int read() {
     }
     return x * f;
 }
-
+int t;
 signed main()
 {
-    fastio;   
+    fastio;
+    cin >> t;
+    while(t--){
+        int x;
+        cin >> x;
+        int l = 1,r = 1e4,ans;
+        while(l < r){
+            int mid = l + r >> 1;
+            if((mid*(mid+1)) >= 2*x) r = mid;
+            else l = mid + 1;
+        }
+        int v =(l+1) * l / 2;
+        if(v==x){
+            ans = l; 
+        }else if(v==x+1){
+            ans = l+1;
+        }else{
+            ans = l;
+        }
+        cout << ans << endl;
+    }
 }
