@@ -15,8 +15,11 @@ typedef pair <int, int> pii;
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 
-
+int w;
 signed main()
 {
     fastio;
+    cin >> w;
+    if(w >= 4 && w % 2 == 0) puts("YES");
+    else puts("NO");
 }

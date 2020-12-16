@@ -15,8 +15,15 @@ typedef pair <int, int> pii;
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 
-
+int x,y;
 signed main()
 {
     fastio;
+    cin >> x >> y;
+    int a = 6 - max(x,y) + 1;
+    int b = 6;
+    int c = __gcd(a,b);
+    a /= c;b /= c;
+    cout << a << "/" << b << endl;
+    return 0;
 }

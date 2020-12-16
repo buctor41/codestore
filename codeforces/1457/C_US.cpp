@@ -1,36 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-typedef long double ld;
-typedef pair <int, int> pii;
-#define int ll
-
-#define pb push_back
-#define F first
-#define S second
-#define _sz(x) ((int)x.size())
-
-#define fastio ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
-int dx[4] = {-1,0,1,0};
-int dy[4] = {0,1,0,-1};
-
-
-inline int read() {
-  char c = getchar();
-  int x = 0, f = 1;
-  while (c < '0' || c > '9') {
-    if (c == '-') f = -1;
-    c = getchar();
-  }
-  while (c >= '0' && c <= '9') {
-    x = x * 10 + c - '0';
-    c = getchar();
-  }
-  return x * f;
+int check(double x)
+{
+    double y = x + 2 * x * x * x;
+    if(y >= 1000000) return 1;
+    else return 0;
 }
-
 signed main()
 {
-    
+      //x + 2 * x ^ 3 = 1000000   ºóËÄÎ»i
+      double eps = 1e-6;
+      double l = 0,r = 1e6;
+      while(l + eps < r)
+      {
+          double mid = (l + r) / 2;
+          if(check(mid)) r = mid;
+          else l = mid;
+      }
+      printf("%.4lf\n",l);
 }
