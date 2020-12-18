@@ -38,7 +38,8 @@ signed main()
         cin >> n;
         vector<int> vec;
         for(int i = 1; i <= n; i++){
-            int v = read();
+            int v;
+            cin >> v;
             vec.pb(v);
         }
         sort(vec.begin(),vec.end());
@@ -61,7 +62,10 @@ signed main()
         a.push_back({v,cnt});
         int ans = 0;
         n = a.size();
-        for(int i = 0; i < a.size() - 1; i++){
+        for(int i = 0; i < a.size(); i++){
+            if(i >= n - 2){
+               break;
+            }
             int v0 = a[i].F,c0 = a[i].S;
             int v1 = a[i+1].F,c1=a[i+1].S;
             int v2 = a[i+2].F,c2=a[i+2].S;
@@ -99,6 +103,15 @@ signed main()
             int c1 = a[n-1].S,c2 = a[n-2].S;
             if(c1 >= 3) ans += (c1 * (c1-1) * (c2-2) / 6);
             if(c2 >= 3) ans += (c2 * (c2-1) * (c2-2) / 6);
+            if(c1 == 1 && c2 >= 2){
+                ans += (c2 * (c2 - 1) / 2);
+            }
+            if(c1 == 2 && c2 >= 1){
+                ans += c2;
+                if(c2 >= 2){
+                    ans += c2 * (c2 - 1);
+                }
+            }
         }
         cout << ans << endl;
     }

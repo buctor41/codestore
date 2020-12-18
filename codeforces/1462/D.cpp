@@ -71,7 +71,6 @@ signed main()
             if(_v!=0) flag = false;
             if(flag){
                 ans = min(cnt,ans);
-                // cout << v << " " << ans << endl;
             }
         }
         cout << ans << endl;
