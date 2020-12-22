@@ -20,19 +20,14 @@ signed main()
 {
     fastio;
     cin >> x;
-    x = abs(x);
-    int l = 0,r = 1e5 + 10;
-    while(l < r){
-        int mid = l + r >>1;
-        if(mid * (mid + 1) >= 2 * x) r = mid;
-        else l = mid + 1;
+    int cnt = 0;
+    for(int i = 2; i < x; i++){
+        int v = x;
+        while(v){
+            cnt += (v % i);
+            v /= i;
+        }
     }
-    int v = l * (l + 1) / 2;
-    v = v - x;
-    if(v % 2 == 0){
-        cout << l << endl;
-    }else{
-        if(l % 2 == 0) cout << l + 1 << endl;
-        else cout << l + 2 << endl;
-    }
+    int g = __gcd(cnt,x-2);
+    cout << cnt / g << "/" << (x - 2) / g << endl;
 }
