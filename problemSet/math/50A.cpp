@@ -15,24 +15,18 @@ typedef pair <int, int> pii;
 int dx[4] = {-1,0,1,0};
 int dy[4] = {0,1,0,-1};
 
-int n,m,x;
+int n,m;
 signed main()
 {
     fastio;
-    cin >> n >> m >> x;
-    x -= 1;
-    n -= 2 * x; m -= 2 * x;
-    int ans;
-    if(n <= 0 || m <= 0){
-        ans = 0;
-    }else if(n == 1 && m == 1){
-        ans = 1;
-    }else if(n == 1){
-        ans = (m + 1) / 2;
-    }else if(m == 1){
-        ans = (n + 1) / 2;
+    cin >> n >> m;
+    int ans = 0;
+    if(n % 2 == 0 || m % 2 == 0){
+        ans = (n * m) / 2;
     }else{
-        ans = n + m - 2;
+        int a = max(n,m),b = min(n,m);
+        ans += ((a - 1) * b / 2);
+        ans += (b / 2);
     }
     cout << ans << endl;
 }
